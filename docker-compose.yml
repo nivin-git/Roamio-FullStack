@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: roamio-postgres
+    environment:
+      POSTGRES_DB: roamio
+      POSTGRES_USER: roamio
+      POSTGRES_PASSWORD: roamio
+    ports:
+      - "5433:5432"
+    volumes:
+      - roamio_pgdata:/var/lib/postgresql/data
+
+volumes:
+  roamio_pgdata:
